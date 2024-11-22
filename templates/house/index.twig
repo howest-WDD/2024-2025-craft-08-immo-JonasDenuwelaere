@@ -15,7 +15,7 @@
 			{% for house in houses %}
 			<!-- immo card -->
 			<div class="col-12 col-sm-6 col-lg-4 ">
-				<a href="#" class="c-immo-card">
+				<a href="{{url(house.uri)}}" class="c-immo-card">
 					<div class="c-immo-card__imgcontainer">
 						<img src="{{house.cover.one().url()}}" alt="" class="c-immo-card__img">
 						<div class="c-immo-card__tag {% switch house.state %}
@@ -31,7 +31,7 @@
 					<div class="c-immo-card__infocontainer">
 						<div class="c-immo-card__heading">
 							<h3 class="c-immo-card__title">{{house.title}}</h3>
-							<p class="c-immo-card__price">${{house.price|money}}</p>
+							<p class="c-immo-card__price">{{house.price|money}}</p>
 						</div>
 						<div class="c-immo-card__location">
 							<img src="{{url('img/icons/location.svg')}}" alt="">
